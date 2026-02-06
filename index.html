@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarma 30 Minutos</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --bg: #0f172a;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: #1e293b;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        #timer {
+            font-size: 6rem;
+            font-weight: bold;
+            font-variant-numeric: tabular-nums;
+            margin: 1rem 0;
+        }
+        .controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        .btn-start { background-color: var(--primary); color: white; }
+        .btn-reset { background-color: #ef4444; color: white; }
+        button:hover { opacity: 0.9; transform: scale(1.05); }
+        button:disabled { background-color: #475569; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Temporizador</h1>
+        <div id="timer">30:00</div>
+        <div class="controls">
+            <button class="btn-start" id="startBtn" onclick="toggleTimer()">Iniciar</button>
+            <button class="btn-reset" onclick="resetTimer()">Reiniciar</button>
+        </div>
+    </div>
+
+    <script>
+        let timeLeft = 30 *
